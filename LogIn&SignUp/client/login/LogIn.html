@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel App - Login & Sign Up</title>
+    <link rel="stylesheet" href="new.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-section">
+            <!-- <img src="./assets/wallpaper.jpg" alt="Travel" class="login-image" /> -->
+        </div>
+        <div class="form-section">
+            <h1>Travel in Middle East</h1>
+            <div class="form-toggle">
+                <button id="loginBtn" class="active">Login</button>
+                <button id="signupBtn">Sign Up</button>
+            </div>
+
+            <form id="loginForm" class="form">
+                <h2>Login</h2>
+                <div class="error-message" id="loginError"></div>
+                <input type="email" placeholder="Email" id="login-email" required>
+                <input type="password" placeholder="Password" id="login-password" required>
+                <button type="submit" onclick="login()" type="button">Login</button>
+                <a class="forget-link" id="forgotPasswordLink" href="#">Forget Password</a>
+
+
+
+            </form>
+            <div id="forgotPasswordModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeModal">&times;</span>
+                    <h2 id="forgot1">Forgot Password</h2>
+                    <div class="error-message" id="forgotError"></div>
+                    <input type="email" placeholder="Enter your email" id="forgotEmail" required>
+                    <button type="submit" id="sendResetLink" onclick="checkEmail()" >Send Reset Link</button>
+                       
+                </div>
+            </div>
+            <div id="VerificationPasswordModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeModal2" onclick="closeSpan()">&times;</span>
+                    <h2 id="forgot3">Enter Verifiaction code</h2>
+                    <div class="error-message" id="VerficationError"></div>
+                    <input type="text" placeholder="Enter Verfication Code" id="Verifiaction" required>
+                    <button type="submit" id="Confirm" onclick="VerifiyLogin()"">Confirm</button>
+                </div>
+            </div>
+            <div id="VerifiyNewUser" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeModal3" ">&times;</span>
+                    <h2 id="forgot4">Enter Verifiaction code</h2>
+                    <div class="error-message" id="VerficationUserError"></div>
+                    <input type="text" placeholder="Enter Verfication Code" id="VerifiactionNewUser" required>
+                    <button type="submit" id="Confirm" onclick="VerifiyUser()"">Confirm</button>
+                </div>
+            </div>
+            
+            <div id="RewritePassword" class="modal">
+                        <div class="modal-content">
+                            <span class="close" id="closeModal3"">&times;</span>
+                            <h2 id="forgot1">Enter a new password</h2>
+                            <div class="error-message" id="changePasswordError"></div>
+                            <input type="password" placeholder="Enter a new password" id="NewPassword" required>
+                            <input type="password" placeholder="Verifiy a new password" id="ConfirmPassword"
+                                onchange="checkPass()" required>
+                            <button type="submit" id="ChangePass" onclick="changePassword()">Change</button>
+                        </div>
+                </div>
+                <form id="signupForm" class="form" style="display: none;">
+                    <h2>Sign Up</h2>
+                    <div class="error-message" id="signupError"></div>
+                    <input type="text" placeholder="Full Name" id="signup-userName" required>
+                    <input id="signup-email" type="email" placeholder="Email" onchange="changeEmailState()" required>
+                    <input type="password" placeholder="Password" id="signup-password" onchange="changePasswordState()" required>
+                    <p id="passwordError"></p>
+                    <button id="sub" type="submit" onclick="signup()" >Sign Up</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+        <script src="./signUp-handler.js"" "></script>
+        <script src="./login-handler.js"" "></script>
+        <script src="./User-client.js"" "></script>
+</body>
+
+</html>

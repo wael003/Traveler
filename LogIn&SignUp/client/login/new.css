@@ -1,0 +1,203 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", Arial, sans-serif;
+    background: #f5f5f5;
+    color: #777;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    /* border: 1px solid hsl(0, 1%, 44%); */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.form-section {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    flex-wrap: wrap; /* Allow the form to stack on smaller screens */
+}
+
+
+
+/* Form Section */
+.login-form {
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+    min-width: 300px;
+}
+
+.login-form h1 {
+    color: #09C6AB;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.form-toggle button {
+    background: none;
+    border: 2px solid #09C6AB;
+    color: #09C6AB;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.form-toggle button.active {
+    background: #09C6AB;
+    color: #fff;
+}
+
+.form-toggle button:hover {
+    background: #05a28b;
+    color: #fff;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+button[type="submit"] {
+    width: 95%;
+    padding: 12px;
+    background: #09C6AB;
+    border: none;
+    margin: 0 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #05a28b;
+}
+
+a.forget-link {
+    display: block;
+    margin-top: 10px;
+    color: #09C6AB;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+a.forget-link:hover {
+    color: #05a28b;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+}
+
+.modal-content {
+    color: #333;
+    text-align: center;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #777;
+}
+
+.modal .close:hover {
+    color: #333;
+}
+
+/* Responsive Design for different screen sizes */
+@media (max-width: 1024px) {
+    .login-container {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .image-section {
+        display: none; /* Hide image section on tablets and smaller screens */
+    }
+
+    .login-form {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-form h1 {
+        font-size: 2rem; /* Smaller font size for smaller screens */
+    }
+
+    .login-form input,
+    .login-form button {
+        width: 100%;
+    }
+
+    .form-toggle button {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form {
+        padding: 15px;
+    }
+
+    .login-form h1 {
+        font-size: 1.8rem;
+    }
+
+    .form-toggle button {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+    }
+
+    .modal {
+        width: 80%;
+    }
+}
